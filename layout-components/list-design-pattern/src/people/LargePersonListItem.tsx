@@ -1,0 +1,24 @@
+import { FunctionComponent } from 'react'
+import { People } from './../App'
+
+type Props = {
+    person: Required<People>
+}
+
+export const LargePersonListItem: FunctionComponent<Props> = ({ person }) => {
+    const { name, age, hairColor, hobbies } = person
+
+    return (
+        <>
+            <h3>{name}</h3>
+            <p>Age: {age} years</p>
+            <p>hair Color: {hairColor}</p>
+            <h3>Hobbies:</h3>
+            <ul>
+                {hobbies.map(hobby => (
+                    <li key={hobby}>{hobby}</li>
+                ))}
+            </ul>
+        </>
+    )
+}
